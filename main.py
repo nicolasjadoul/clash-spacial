@@ -1,7 +1,7 @@
 import threading
 import time
 
-'''from prod import create_app'''
+from prod import create_app
 from prod.game.game import Game
 from flask_cors import CORS
 
