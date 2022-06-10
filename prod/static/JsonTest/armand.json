@@ -1,0 +1,101 @@
+{
+    "id": 5,
+    "name": "Armand",
+    "alliance": null,
+    "fleets": {
+        "1": {
+            "id": 1,
+            "x": 1,
+            "y": 1,
+            "spaceships": {
+                "Light Hunter": 0,
+                "Heavy Hunter": 0,
+                "Light Transport Ship": 0,
+                "Heavy transport Ship": 0,
+                "Destroyer": 0,
+                "Battle Cruiser": 0,
+                "Battle Ship": 0,
+                "Colonizer": 2
+            }
+        }
+    },
+    "planets": {
+        "Jupiter": {
+            "id": 999,
+            "name": "Jupiter",
+            "x": 2,
+            "y": 2,
+            "base": {
+                "id": 0,
+                "buildings": {
+                    "Defensive Turret": {
+                        "id": 0,
+                        "name": "Defensive Turret",
+                        "x": 3,
+                        "y": 3,
+                        "level": 1
+                    },
+                    "Garage": {
+                        "id": 1,
+                        "name": "Garage",
+                        "x": 5,
+                        "y": 8,
+                        "level": 1
+                    },
+                    "Habitation": {
+                        "id": 2,
+                        "name": "Habitation",
+                        "x": 7,
+                        "y": 2,
+                        "level": 1
+                    },
+                    "Mine": {
+                        "id": 3,
+                        "name": "Mine",
+                        "x": 6,
+                        "y": 5,
+                        "level": 1
+                    },
+                    "Nuclear Plant": {
+                        "id": 4,
+                        "name": "Nuclear Plant",
+                        "x": 10,
+                        "y": 0,
+                        "level": 1
+                    },
+                    "Research Center": {
+                        "id": 5,
+                        "name": "Research Center",
+                        "x": 0,
+                        "y": 9,
+                        "level": 1
+                    },
+                    "Solar Panel": {
+                        "id": 6,
+                        "name": "Solar Panel",
+                        "x": 4,
+                        "y": 9,
+                        "level": 1
+                    },
+                    "Warehouse": {
+                        "id": 7,
+                        "name": "Warehouse",
+                        "x": 9,
+                        "y": 8,
+                        "level": 1
+                    }
+                }
+            }
+        },
+        "Mars": {
+            "id": 999,
+            "name": "Mars",
+            "x": 5,
+            "y": 5,
+            "base": {
+                "id": 1,
+                "buildings": {}
+            }
+        }
+    }
+}

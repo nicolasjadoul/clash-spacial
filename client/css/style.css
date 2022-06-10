@@ -1,0 +1,609 @@
+@font-face{
+    font-family:"supercell";
+    src:url("../Typos/supercell-magic-webfont.ttf") format("truetype");
+}
+
+@keyframes glow {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+/*@keyframes slideTitle {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-120%);
+    }
+}*/
+
+@keyframes slideButons {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(+120%);
+    }
+}
+
+@keyframes fade {
+  0% { opacity: 0 }
+  100% { opacity: 1 }
+}
+
+@keyframes color_anim {
+    0% {
+        fill: white;
+    }
+    50% {
+        fill: #FBC638;
+    }
+    100% {
+        fill: white;
+    }
+}
+
+/* Style the video: 100% width and height to cover the entire window */
+#myVideo {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      min-width: 100%;
+      min-height: 100%;
+    z-index:0;
+}
+
+/* Add some content at the bottom of the video/page */
+
+
+/* Style the button used to pause/play the video */
+
+
+.button {
+  border: 0;
+  background: transparent;
+  box-sizing: border-box;
+  width: 0;
+  height: 37px;
+  border-color: transparent transparent transparent #202020;
+  transition: 100ms all ease;
+  cursor: pointer;
+  border-style: solid;
+  border-width: 18px 0 18px 30px;
+}
+.buttonpaused {
+  border: 0;
+  background: transparent;
+  box-sizing: border-box;
+  width: 0;
+  height: 37px;
+  border-color: transparent transparent transparent #202020;
+  transition: 100ms all ease;
+  cursor: pointer;
+  border-style: double;
+  border-width: 0px 0 0px 30px;
+}
+#button:hover {
+  border-color: transparent transparent transparent #505050;
+}
+
+
+
+/* Paul */
+
+body {
+    padding: 0;
+    margin: 0; 
+    height: 100vh;
+  padding: 0;
+  margin: 0; 
+  display: flex;
+    flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+header{
+    
+    margin-bottom: 8%;
+}
+#clash{
+    font-family: 'supercell';
+    margin-left: 37px;
+    z-index: 1;
+    /*animation: 2s ease-in-out 2s 1 slideTitle forwards;*/
+}
+
+#spatiale{
+    font-family: 'supercell';
+    margin-left:-45px;
+    z-index:1;
+    /*animation: 2s ease-in-out 2s 1 slideTitle forwards;*/
+}
+
+#C{
+    box-shadow: inset -1px -1px 1px rgba(255, 255, 255, 0.05),
+    inset 1px 1px 2px rgba(0, 0, 0, 0.2);
+    color: yellow;
+    text-shadow: 0 0 1px yellow, 0 0 5px yellow;
+    animation: glow 5s linear infinite;
+    
+}
+
+#L1{
+    box-shadow: inset -1px -1px 1px rgba(255, 255, 255, 0.05),
+    inset 1px 1px 2px rgba(0, 0, 0, 0.2);
+    color: yellow;
+    text-shadow: 0 0 1px green, 0 0 5px yellow;
+    animation: glow 5s linear infinite;
+    animation-delay: 150ms; 
+}
+
+#A1{
+    box-shadow: inset -1px -1px 1px rgba(255, 255, 255, 0.05),
+    inset 1px 1px 2px rgba(0, 0, 0, 0.2);
+    color: yellow;
+    text-shadow: 0 0 1px yellow, 0 0 5px yellow;
+    animation: glow 5s linear infinite;
+    animation-delay: 300ms;
+}
+
+#S1{
+    box-shadow: inset -1px -1px 1px rgba(255, 255, 255, 0.05),
+    inset 1px 1px 2px rgba(0, 0, 0, 0.2);
+    color: yellow;
+    text-shadow: 0 0 1px yellow, 0 0 5px yellow;
+    animation: glow 5s linear infinite;
+    animation-delay: 450ms;
+}
+
+#H{
+    box-shadow: inset -1px -1px 1px rgba(255, 255, 255, 0.05),
+    inset 1px 1px 2px rgba(0, 0, 0, 0.2);
+    color: yellow;
+    text-shadow: 0 0 1px yellow, 0 0 5px yellow;
+    animation: glow 5s linear infinite;
+    animation-delay: 600ms;
+}
+
+#S2{
+    box-shadow: inset -1px -1px 1px rgba(255, 255, 255, 0.05),
+    inset 1px 1px 2px rgba(0, 0, 0, 0.2);
+    color: yellow;
+    text-shadow: 0 0 1px yellow, 0 0 5px yellow;
+    animation: glow 5s linear infinite;
+    animation-delay: 750ms;
+}
+
+#P{
+    box-shadow: inset -1px -1px 1px rgba(255, 255, 255, 0.05),
+    inset 1px 1px 2px rgba(0, 0, 0, 0.2);
+    color: yellow;
+    text-shadow: 0 0 1px yellow, 0 0 5px yellow;
+    animation: glow 5s linear infinite;
+    animation-delay: 900ms;
+}
+
+#A2{
+    box-shadow: inset -1px -1px 1px rgba(255, 255, 255, 0.05),
+    inset 1px 1px 2px rgba(0, 0, 0, 0.2);
+    color: yellow;
+    text-shadow: 0 0 1px yellow, 0 0 5px yellow;
+    animation: glow 5s linear infinite;
+    animation-delay: 1050ms;
+}
+
+#T{
+    box-shadow: inset -1px -1px 1px rgba(255, 255, 255, 0.05),
+    inset 1px 1px 2px rgba(0, 0, 0, 0.2);
+    color: yellow;
+    text-shadow: 0 0 1px yellow, 0 0 5px yellow;
+    animation: glow 5s linear infinite;
+    animation-delay: 1200ms;
+}
+
+#I{
+    box-shadow: inset -1px -1px 1px rgba(255, 255, 255, 0.05),
+    inset 1px 1px 2px rgba(0, 0, 0, 0.2);
+    color: yellow;
+    text-shadow: 0 0 1px yellow, 0 0 5px yellow;
+    animation: glow 5s linear infinite;
+    animation-delay: 1350ms;
+}
+
+#A3{
+    box-shadow: inset -1px -1px 1px rgba(255, 255, 255, 0.05),
+    inset 1px 1px 2px rgba(0, 0, 0, 0.2);
+    color: yellow;
+    text-shadow: 0 0 1px yellow, 0 0 5px yellow;
+    animation: glow 5s linear infinite;
+    animation-delay: 1500ms;
+}
+
+#L2{
+    box-shadow: inset -1px -1px 1px rgba(255, 255, 255, 0.05),
+    inset 1px 1px 2px rgba(0, 0, 0, 0.2);
+    color: yellow;
+    text-shadow: 0 0 1px yellow, 0 0 5px yellow;
+    animation: glow 5s linear infinite;
+    animation-delay: 1650ms;
+}
+
+
+ul {
+  position: relative;
+  display: flex;
+
+}
+
+li {
+  list-style: none;
+}
+
+
+span{
+    position: relative;
+    height: 80px;
+    width: 80px;
+    background: #18191f;
+    color: #555;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 46px;
+    margin: 0 1px;
+    border-radius: 20px;
+    z-index:1;
+      box-shadow: -1px -1px 4px rgba(255, 255, 255, 0.05),
+        4px 4px 6px rgba(0, 0, 0, 0.2),
+        inset -1px -1px 4px rgba(255, 255, 255, 0.05),
+        inset 1px 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+
+.content {
+  position: fixed;
+  bottom: 0;
+    left:0px;
+  padding: 20px;
+
+}
+
+#audio {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left:0px;
+    z-index: 1;
+  padding: 10px;
+    width: 20%; 
+}
+
+.Son{
+    height: 150%;
+    margin: 0 2px;
+    font-family: 'supercell';
+    background: #18191f;
+    color: #6225E6;
+    border-radius: 5px;
+    box-shadow: inset -1px -1px 1px rgba(255, 255, 255, 0.05),
+    inset 1px 1px 2px rgba(0, 0, 0, 0.2);
+    color: yellow;
+    text-shadow: 0 0 1px yellow, 0 0 5px yellow;
+    animation: glow 5s linear infinite;
+}
+
+
+/* Form Nico
+
+
+#form{
+    background-color:#EBECF0;
+    height: 30 px;
+    width: 30px;
+    border: 5px solid black;
+    padding: 5px 300px 37px 5px;
+    margin: auto;
+    margin-top: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10%;
+    z-index: 3
+
+}
+
+.form1{
+    margin-left: 30px;
+    width: 300px;
+    margin-top: 20px;
+    margin-left: 60px;
+
+}
+
+*/
+
+/* Test partie paul */
+
+
+
+
+#boutons{
+    padding: 0;
+    display: flex;
+    z-index: 2;
+    justify-content: center;
+    align-items: center;
+    /*opacity: 0;*/
+    animation-delay: 2s;
+    /*animation: fade 1s 2.5s ease-in forwards;*/
+    
+}
+
+#wrapper1, #wrapper2 {
+    align-content: center;
+    cursor: pointer;
+    display: flex;
+    display: inline-block;
+    justify-content: center;
+    margin: 20px 135px;
+    
+}
+
+.cta1, .cta2 {
+    display: flex;
+    padding: 8px 12px;
+    text-decoration: none;
+    font-family: 'supercell';
+    font-size: 20px;
+    color: white;
+    background: #6225E6;
+    transition: 1s;
+    box-shadow: 6px 6px 0 black;
+    transform: skewX(-15deg);
+}
+
+.cta1:focus, .cta2:focus {
+   outline: none; 
+}
+
+.cta1:hover, .cta2:hover {
+    transition: 0.5s;
+    box-shadow: 10px 10px 0 #FBC638;
+}
+
+.cta1 span:nth-child(2) {
+    transition: 0.5s;
+    margin-right: 0px;
+}
+.cta2 span:nth-child(2) {
+    transition: 0.5s;
+    margin-right: 0px;
+}
+
+.cta1:hover  span:nth-child(2) {
+    transition: 0.5s;
+    margin-right: 45px;
+}
+
+.cta2:hover  span:nth-child(2) {
+    transition: 0.5s;
+    margin-right: 45px;
+}
+
+.Inscription {
+    transform: skewX(15deg);
+  }
+
+.Inscription:nth-child(2) {
+    width: 57px;
+    margin-left: 30px;
+    position: relative;
+    top: 12%;
+  }
+  
+.Connexion {
+    transform: skewX(15deg);
+  }
+
+.Connexion:nth-child(2) {
+    width: 57px;
+    margin-left: 30px;
+    position: relative;
+    top: 12%;
+  }
+
+#submitBIns{
+    font-family: 'supercell';
+    background: #6225E6;
+    border: none;
+    Color: #fff;
+    font-size: 20px;
+    cursor: pointer;   
+}
+
+button.Inscription:before{
+    position: absolute;
+    content:'';
+    top:-10px;
+    right:-10px;
+    left:-10px;
+    bottom:-10px;
+    border-color: red;
+}
+
+#submitBCon{
+    
+    font-family: 'supercell';
+    background: #6225E6;
+    border: none;
+    Color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    
+}
+/**************SVG****************/
+
+path.one {
+    transition: 0.4s;
+    transform: translateX(-60%);
+}
+
+path.two {
+    transition: 0.5s;
+    transform: translateX(-30%);
+}
+
+.cta1:hover path.three {
+    animation: color_anim 1s infinite 0.2s;
+}
+
+.cta2:hover path.three {
+    animation: color_anim 1s infinite 0.2s;
+}
+
+.cta1:hover path.one {
+    transform: translateX(0%);
+    animation: color_anim 1s infinite 0.6s;
+}
+
+.cta2:hover path.one {
+    transform: translateX(0%);
+    animation: color_anim 1s infinite 0.6s;
+}
+
+.cta1:hover path.two {
+    transform: translateX(0%);
+    animation: color_anim 1s infinite 0.4s;
+}
+
+.cta2:hover path.two {
+    transform: translateX(0%);
+    animation: color_anim 1s infinite 0.4s;
+}
+
+/******************************************/
+/* FROMS */
+
+/*.btn {
+  padding: 8px 20px;
+  border-radius: 0;
+  overflow: hidden;
+
+  &::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      120deg,
+      transparent,
+      var(--primary-color),
+      transparent
+    );
+    transform: translateX(-100%);
+    transition: 0.6s;
+  }
+
+  &:hover {
+    background: transparent;
+    box-shadow: 0 0 20px 10px hsla(204, 70%, 53%, 0.5);
+
+    &::before {
+      transform: translateX(100%);
+    }
+  }
+}
+*/
+
+.form{
+    position: relative;
+  display: flex;
+}
+
+.form-input-material {
+  --input-default-border-color: white;
+  --input-border-bottom-color: white;
+  
+}
+
+#login-formCon {
+    
+  display: flex;
+    font-family: 'supercell'; 
+  flex-direction: column;
+    background: #18191f;
+    border-radius: 15px;
+    padding-left: 50px;
+    padding-right: 65px;
+ 
+    color: white;
+    
+  background: rgba(0, 0, 0, 0.9);
+  box-shadow: -1px -1px 4px rgba(255, 255, 255, 0.05),
+        4px 4px 6px rgba(0, 0, 0, 0.2),
+        inset -1px -1px 4px rgba(255, 255, 255, 0.05),
+        inset 1px 1px 1px rgba(0, 0, 0, 0.1);
+    
+     margin: 0px 50px;
+    opacity: 1;
+    opacity: 1;
+
+
+}
+
+#login-formIns {
+    
+  display: flex;
+    font-family: 'supercell'; 
+  flex-direction: column;
+    background: #18191f;
+    border-radius: 15px;
+    padding-left: 50px;
+    padding-right: 65px;
+ 
+    color: white;
+    
+  background: rgba(0, 0, 0, 0.9);
+  box-shadow: -1px -1px 4px rgba(255, 255, 255, 0.05),
+        4px 4px 6px rgba(0, 0, 0, 0.2),
+        inset -1px -1px 4px rgba(255, 255, 255, 0.05),
+        inset 1px 1px 1px rgba(0, 0, 0, 0.1);
+    
+     margin: 0px 50px;
+    opacity: 1;
+}
+
+h1 {
+    margin: 15px;
+    padding: 15px;
+    text-align: center;
+}
+
+.form-input-material {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+#password{
+    margin-bottom: 20px;
+}
+
+.form-input-material input{
+    height: 30px;
+    width: 100%;
+    margin: 10px;
+    font-family: supercell;
+    font-size: 14px;
+
+}
+
+

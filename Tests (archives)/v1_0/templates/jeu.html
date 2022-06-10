@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html id="html" lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="static/css/jeu.css">
+    <script rel="script" src="static/js/jquery-3.6.0.js"></script>
+    <script rel="script" src="static/js/jeu.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.min.js"></script>
+    <link rel ="icon" type="image/png" href="static/assets/topBarIcon/ClashSpatial.png"/>
+    <title>Clash Spatial</title>
+</head>
+<body>
+
+<!--Header Start-->
+<header>
+
+    <!-------------------------------------Logo------------------------------------->
+    <div class="topBarLogo">
+        <img class="logo" src="static/assets/topBarIcon/ClashSpatial.png" alt="Game-Logo">
+    </div>
+    <div class="left-section">
+        <div class="planet-info">
+            <img src="static/assets/topBarIcon/planet.png" alt="user icon">
+            <span id="planet-name">Earth 02</span>
+        </div>
+    </div>
+
+    <!-- Bar That Coantain Player Stat-->
+    <div class="topBar">
+
+        <!-------------Left Part------------->
+        <div id="topBarLeft">
+
+            <!--fleet Data-->
+            <div class="topBarPart">
+                <div class="topBarIcon"><img src="static/assets/topBarIcon/fleet.png" class="assets" alt=""></div>
+                <div class="animated-progress progress-fleet">
+                    <span id="fleet-progress"></span>
+                    <p id="fleet-value">400</p>
+                </div>
+            </div>
+
+            <!--construction Data-->
+            <div class="topBarPart">
+                <div class="topBarIcon"><img src="static/assets/topBarIcon/space-colonyIcon.png" class="assets" alt=""></div>
+                <div class="animated-progress progress-construction">
+                    <span id="construction-progress"></span>
+                    <p id="construction-value">400</p>
+                </div>
+            </div>
+
+            <!--steel Data-->
+            <div class="topBarPart">
+                <div class="topBarIcon"><img src="static/assets/topBarIcon/steel.png" class="assets" alt=""></div>
+                <div class="animated-progress progress-steel">
+                    <span id="steel-progress"></span>
+                    <p id="steel-value">400</p>
+                </div>
+            </div>
+
+
+            <!--crystal Data-->
+            <div class="topBarPart">
+                <div class="topBarIcon"><img src="static/assets/topBarIcon/Crystal.png" class="assets" alt=""></div>
+                <div class="animated-progress progress-crystal">
+                    <span id="crystal-progress"></span>
+                    <p id="crystal-value">400</p>
+                </div>
+            </div>
+        </div>
+
+
+        <!-------------Logo------------->
+        <div class="logoSpace"></div>
+
+        <!-------------Right Part------------->
+        <div id="topBarRight">
+
+
+            <!--uranium Data-->
+            <div class="topBarPart">
+                <div class="topBarIcon"><img src="static/assets/topBarIcon/uranium.png" class="assets" alt=""></div>
+                <div class="animated-progress progress-uranium">
+                    <span id="uranium-progress"></span>
+                    <p id="uranium-value">400</p>
+                </div>
+            </div>
+
+            <!--energy Data-->
+            <div class="topBarPart">
+                <div class="topBarIcon"><img src="static/assets/topBarIcon/energy.png" class="assets" alt=""></div>
+                <div class="animated-progress progress-energy">
+                    <span id="energy-progress"></span>
+                    <p id="energy-value">400</p>
+                </div>
+            </div>
+
+            <!--population Data-->
+            <div class="topBarPart">
+                <div class="topBarIcon"><img src="static/assets/topBarIcon/population.png" class="assets" alt=""></div>
+                <div class="animated-progress progress-population">
+                    <span id="population-progress"></span>
+                    <p id="population-value">400</p>
+                </div>
+            </div>
+
+            <!--Gold Data-->
+            <div class="topBarPart">
+                <div class="topBarIcon"><img src="static/assets/topBarIcon/gold.png" class="assets" alt=""></div>
+                <div class="animated-progress progress-gold">
+                    <span id="gold-progress"></span>
+                    <p id="gold-value">400</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--------User Info Section-------->
+    <div class="right-section">
+        <div class="user-info">
+            <img src="static/assets/topBarIcon/user.png" alt="settings icon">
+            <span id="user">{{user.user_name}}</span>
+            <img src="static/assets/topBarIcon/settings.png" alt="settings icon">
+            <img src="static/assets/topBarIcon/logout.png" alt="log out">
+        </div>
+    </div>
+
+</header>
+
+<main class="main">
+
+    <div>
+
+    </div>
+    <!--------------------------------------Map of the game-------------------------------------->
+    <div id="map" class="map">
+    </div>
+
+
+    <div id="Center">
+        <div id="C">
+            <div id="wrap-menuG">
+
+                <!-------------------------------------Left Menu--------------------------------------->
+                <div id="menug">
+
+                    <!------------------Construction Menu Button----------------->
+                    <div class="sous-menu">
+                        <img src="static/assets/topBarIcon/space-colonyIcon.png" alt="space clony Icon" onclick="show_menuc();">
+                        <button id="construction" type="button" onclick="show_menuc();">
+                            Construction
+                        </button>
+                    </div>
+                    <!------------------Alliance Menu Button----------------->
+                    <div class="sous-menu">
+                        <img src="static/assets/topBarIcon/alliance.png" alt="alliance icon" onclick="show_menua();">
+                        <button id="alliance" onclick="show_menua();" >
+                            <span>Alliance</span>
+                        </button>
+                    </div>
+
+                    <!------------------Fleet Menu Button----------------->
+                    <div class="sous-menu">
+                        <img src="static/assets/topBarIcon/fleet.png" alt="fleet icon" onclick="show_menuv();">
+                        <button id="flotte" type="button" onclick="show_menuv();">
+                            Flotte
+                        </button>
+                    </div>
+
+                    <!------------------Map Menu Button----------------->
+                    <div class="sous-menu">
+                        <img src="static/assets/topBarIcon/planet.png" alt="planet icon" onclick="show_menuv();">
+                        <button id="carte" role="button" onclick="show_menuv();">
+                            <span>Carte</span>
+                        </button>
+                    </div>
+
+                </div>
+        </div>
+
+            <!-------------------------------------------------------------------------
+            Construction Menu PopUp
+            <-------------------------------------------------------------------------->
+            <div class="menuS" id="menuc">
+                <button class="close" type="button" onclick="close_menuc();">X</button>
+
+                <div id="titre_const"><p>Menu de construction</p></div>
+
+                <div id="menu_const">
+                    <div class="sous_menu_const" id="LightHunter">
+                        <p class="nom_vaisseau">chasseur léger</p>
+                        <p class="cout_vaisseau">cout : </p>
+                        <p class="nombre_vaisseau">Nombre :</p>
+                        <label>
+                            <input class="choix_vaisseau" type="number">
+                        </label>
+                    </div>
+
+                    <div class="sous_menu_const" id="HeavyHunter">
+                        <p class="nom_vaisseau">HeavyHunter</p>
+                        <p class="cout_vaisseau">cout : </p>
+                        <p class="nombre_vaisseau">Nombre :</p>
+                        <label>
+                            <input class="choix_vaisseau" type="number" step="1">
+                        </label>
+
+
+                    </div>
+
+                    <div class="sous_menu_const" id="LightTransportShip">
+                        <p class="nom_vaisseau">LightTransportShip</p>
+                        <p class="cout_vaisseau">cout : </p>
+                        <p class="nombre_vaisseau">Nombre :</p>
+                        <label>
+                            <input class="choix_vaisseau" type="number">
+                        </label>
+                        <script>
+                            block_LightTransportShip();
+                        </script>
+                    </div>
+
+                    <div class="sous_menu_const" id="HeavyTransportShip">
+                        <p class="nom_vaisseau">HeavyTransportShip</p>
+                        <p class="cout_vaisseau">cout : </p>
+                        <p class="nombre_vaisseau">Nombre :</p>
+                        <input class="choix_vaisseau" type="number">
+                    </div>
+
+                    <div class="sous_menu_const" id="Destroyer">
+                        <p class="nom_vaisseau">Destroyerr</p>
+                        <p class="cout_vaisseau">cout : </p>
+                        <p class="nombre_vaisseau">Nombre :</p>
+                        <input class="choix_vaisseau" type="number" step="1">
+                        <script>
+                            block_Destroyer();
+                        </script>
+                    </div>
+
+                    <div class="sous_menu_const" id="BattleCruiser">
+                        <p class="nom_vaisseau">BattleCruiser</p>
+                        <p class="cout_vaisseau">cout : </p>
+                        <p class="nombre_vaisseau">Nombre :</p>
+                        <input class="choix_vaisseau" type="number" step="1">
+                        <script>
+                            block_BattleCruiser();
+                        </script>
+                    </div>
+
+                    <div class="sous_menu_const" id="BattleShip">
+                        <p class="nom_vaisseau">BattleShip</p>
+                        <p class="cout_vaisseau">cout : </p>
+                        <p class="nombre_vaisseau">Nombre :</p>
+                        <input class="choix_vaisseau" type="number" step="1">
+                        <script>
+                            block_BattleShip();
+                        </script>
+                    </div>
+                    <div class="sous_menu_const" id="Colonizer">
+                        <p class="nom_vaisseau">Colonizerr</p>
+                        <p class="cout_vaisseau">cout : </p>
+                        <p class="nombre_vaisseau">Nombre :</p>
+                        <input class="choix_vaisseau" id="choix" type="number" step="1">
+                        <script>
+                            block_Colonizer();
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+            <div id="menuv">
+                <button class="close" type="button" onclick="close_menuv();">
+                    X
+                </button>
+
+                <div class="vaisseau">
+                    <div id="vaisseau1">
+                        <img src="static/assets/xwing.png" alt="">
+                    </div>
+                    <div id="vaisseau2"></div>
+                    <div id="vaisseau3"></div>
+                    <div id="vaisseau4"></div>
+                    <div id="vaisseau5"></div>
+                    <div id="vaisseau6"></div>
+                    <div id="vaisseau7"></div>
+                    <div id="vaisseau8"></div>
+                    <div id="vaisseau9"></div>
+                </div>
+            </div>
+
+            <div id="menua" style="display:none;">
+                <button class="close" type="button" onclick="close_menua();">X</button>
+                <div class="vaisseau">
+                    <div id="vaisseau10"></div>
+                    <div id="vaisseau11"></div>
+                    <div id="vaisseau12"></div>
+                    <div id="vaisseau13"></div>
+                    <div id="vaisseau14"></div>
+                    <div id="vaisseau15"></div>
+                    <div id="vaisseau16"></div>
+                    <div id="vaisseau17"></div>
+                    <div id="vaisseau18"></div>
+                </div>
+            </div>
+
+            <div id="menur" style="display:none;">
+                <button class="close" type="button" onclick="close_menur();">
+                    X
+                </button>
+
+                <div class="vaisseau">
+                    <div id="vaisseau20">
+
+                    </div>
+                    <div id="vaisseau22">
+
+                    </div>
+                    <div id="vaisseau23">
+
+                    </div>
+                    <div id="vaisseau24">
+
+                    </div>
+                    <div id="vaisseau25">
+
+                    </div>
+                    <div id="vaisseau26">
+
+                    </div>
+                    <div id="vaisseau27">
+
+                    </div>
+                    <div id="vaisseau28">
+
+                    </div>
+                    <div id="vaisseau29">
+
+                    </div>
+                </div>
+
+            </div>
+
+        <div class="wrap-menuD">
+                <div id="menud">
+                    <div class="menuDCloseOpenBtn">
+                        <button id="closeOpenMenuD" onclick="closeOpenMenuD();"> < </button>
+                    </div>
+                    <div class="subMenuD">
+                        <div class="possession-title">Possessions</div>
+                        <div id="possessionArea"></div>
+                    </div>
+                </div>
+            <script>
+                function closeOpenMenuD() {
+                    console.log(document.getElementsByClassName("wrap-menuD")[0].style.right);
+                    if (parseInt(document.getElementsByClassName("wrap-menuD")[0].style.right) != 0) {
+                        document.getElementsByClassName("wrap-menuD")[0].style.right = "0";
+                        document.getElementById("closeOpenMenuD").innerText = ">";
+                    } else {
+                        document.getElementsByClassName("wrap-menuD")[0].style.right = "-250px";
+                        document.getElementById("closeOpenMenuD").innerText = "<";
+                    }
+                }
+            </script>
+
+        </div>
+
+    </div>
+</main>
+
+
+
+<footer>
+    <div class="zoom">
+        <button class="default-btn zoom-btn" onclick="zoom(false)">-</button>
+        <button class="default-btn zoom-btn" onclick="zoom(true)">+</button>
+    </div>
+
+    <!---------------------------Building Construction Store--------------------------->
+    <div id="building-store">
+
+        <div id="building-construction-up-down">
+            <div class="building-bar-title">
+                <button class="building-menu-up-down" onclick="constructionMenuUpDown()">Construction de bâtiments <span id="title-bar-icon"></span></button>
+            </div>
+        </div>
+
+        <div id="building-construction">
+
+            <div class="building-construction-btn">
+                <button id="prev"> 	&lt; </button>
+            </div>
+
+            <div class="building-select">
+
+                <div class="building-info" id="building-1">
+                    <div class="image-section">
+                        <img class="building-image" src="static/assets/buildings/commandCenter.png" alt="commandCenter">
+                    </div>
+                    <span class="building-title"> Command center</span>
+                    <button class="buy-building" id="buy-commandCenter">Buy</button>
+                </div>
+
+                <div class="building-info" id="building-2">
+                    <div class="image-section">
+                        <img class="building-image" src="static/assets/buildings/crystalDepot.png" alt="commandCenter">
+                    </div>
+                    <span class="building-title"> Command center</span>
+                    <button class="buy-building" id="buy-crystalDepot" >Buy</button>
+                </div>
+
+                <div class="building-info" id="building-3">
+                    <div class="image-section">
+                        <img class="building-image" src="static/assets/buildings/crystalMine.png" alt="commandCenter">
+                    </div>
+                    <span class="building-title"> Command center</span>
+                    <button class="buy-building" id="buy-crystalMine">Buy</button>
+                </div>
+
+                <div class="building-info" id="building-4">
+                    <div class="image-section">
+                        <img class="building-image" src="static/assets/buildings/defenseTurret.png" alt="commandCenter">
+                    </div>
+                    <span class="building-title"> Command center</span>
+                    <button class="buy-building" id="buy-defenseTurret">Buy</button>
+                </div>
+
+                <div class="building-info" id="building-5">
+                    <div class="image-section">
+                        <img class="building-image" src="static/assets/buildings/garage.png" alt="commandCenter">
+                    </div>
+                    <span class="building-title"> Command center</span>
+                    <button class="buy-building" id="buy-garage">Buy</button>
+                </div>
+                <div class="building-info" id="building-6">
+                    <div class="image-section">
+                        <img class="building-image" src="static/assets/buildings/habitation.png" alt="commandCenter">
+                    </div>
+                    <span class="building-title"> Command center</span>
+                    <button class="buy-building" id="buy-habitation">Buy</button>
+                </div>
+
+                <div class="building-info" id="building-7">
+                    <div class="image-section">
+                        <img class="building-image" src="static/assets/buildings/nuclearPlant.png" alt="commandCenter">
+                    </div>
+                    <span class="building-title"> Command center</span>
+                    <button class="buy-building" id="buy-nuclearPlant">Buy</button>
+                </div>
+
+                <div class="building-info" id="building-8">
+                    <div class="image-section">
+                        <img class="building-image" src="static/assets/buildings/solarPanel.png" alt="commandCenter">
+                    </div>
+                    <span class="building-title"> Command center</span>
+                    <button class="buy-building" id="buy-solarPanel">Buy</button>
+                </div>
+
+                <div class="building-info" id="building-9">
+                    <div class="image-section">
+                        <img class="building-image" src="static/assets/buildings/spaceShipYard.png" alt="commandCenter">
+                    </div>
+                    <span class="building-title"> Command center</span>
+                    <button class="buy-building" id="buy-spaceShipYard">Buy</button>
+                </div>
+
+                <div class="building-info" id="building-10">
+                    <div class="image-section">
+                        <img class="building-image" src="static/assets/buildings/stealDepot.png" alt="commandCenter">
+                    </div>
+                    <span class="building-title"> Command center</span>
+                    <button class="buy-building" id="buy-stealDepot">Buy</button>
+                </div>
+
+                <div class="building-info" id="building-11">
+                    <div class="image-section">
+                        <img class="building-image" src="static/assets/buildings/stealMine.png" alt="commandCenter">
+                    </div>
+                    <span class="building-title"> Command center</span>
+                    <button class="buy-building" id="buy-stealMine">Buy</button>
+                </div>
+
+                <div class="building-info" id="building-12">
+                    <div class="image-section">
+                        <img class="building-image" src="static/assets/buildings/uranimMine.png" alt="commandCenter">
+                    </div>
+                    <span class="building-title"> Command center</span>
+                    <button class="buy-building" id="buy-uranimMine">Buy</button>
+                </div>
+
+            </div>
+            <div class="building-construction-btn">
+                <button id="next"> &gt; </button>
+            </div>
+        </div>
+    </div>
+    <script>
+        block_HeavyTransportShip();
+    </script>
+
+    <!-- Chat textuel -->
+    <div class="chatbox">
+        <div id="chatArea">
+            <div class="msgunit">
+            </div>
+        </div>
+        <div class="chatInput">
+            <form action="" method="POST">
+                <input name="usermsg" type="text" class="usermsg" autocomplete="off" />
+                <button type="submit" class="default-btn submitMessage">Envoyer</button>
+            </form>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+      var socket = io.connect('http://' + document.domain + ':' + location.port);
+
+      socket.on( 'connect', function() {
+        socket.emit( 'my event', {
+          data: 'User Connected'
+        } )
+        var form = $( 'form' ).on( 'submit', function( e ) {
+          e.preventDefault()
+          let user_name = '{{user.user_name}}'
+          let user_input = $( 'input.usermsg' ).val()
+          socket.emit( 'my event', {
+            user_name : user_name,
+            message : user_input
+          } )
+          $( 'input.usermsg' ).val( '' ).focus()
+        } )
+      } )
+      socket.on( 'my response', function( msg ) {
+        console.log( msg )
+        if( typeof msg.user_name !== 'undefined' ) {
+          $( 'h3' ).remove()
+          $( 'div.msgunit' ).append( '<p><b style="color: #000">'+msg.user_name+'</b> '+msg.message+'</p>' )
+        }
+      })
+    </script>
+    <!-- Fin Chat textuel -->
+
+
+
+</footer>
+
+<script>
+    display();
+</script>
+
+</body>
+</html>

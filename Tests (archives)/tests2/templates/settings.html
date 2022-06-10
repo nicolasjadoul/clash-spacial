@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/jeu.css">
+    <script type="text/javascript"  src="{{ url_for('static', filename='jeu.js') }}"></script>
+    <title>Clash Spatial</title>
+</head>
+
+<body>
+    <p>Le pseudo de l'utilisateur connecté est {{user.user_name}}</p>
+    <p>Actuellement son mot de passe est {{user.password}}</p>
+    <form id="chg_pwd" method="post">
+        <div class="form-group" >
+            <label class="d-block">Change Password</label>
+            <br />
+            <input type="text" class="form-control" placeholder="Enter your old password" id="old_pwd" name="old_pwd" required>
+            <br />
+            <input type="password" class="form-control mt-1" placeholder="New password" id="new_pwd1" name="new_pwd1" required>
+            <br />
+            <input type="password" class="form-control mt-1" placeholder="Confirm new password" id="new_pwd2" name="new_pwd2" required>
+            {{result}}
+            <br />
+            <button type="submit" class="btn btn-primary btn-ghost">Change</button>
+        </div>
+    </form>
+</body>
+</html>

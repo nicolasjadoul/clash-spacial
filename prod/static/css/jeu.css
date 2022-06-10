@@ -1,0 +1,926 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+@font-face{
+    font-family:"supercell";
+    src:url("../Typos/supercell-magic-webfont.ttf") format("truetype");
+}
+
+html{
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    /*overflow: hidden;*/
+    cursor: grab;
+    overflow: hidden;
+}
+.main{
+    z-index: -1;
+    width: 100%;
+    align-content: center ;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+.map{
+    padding-top: 50px;
+    display: inline-block;
+    transform: rotateX(50deg) rotateY(20deg) rotateZ(34deg);
+}
+.row {
+    display: flex;
+    flex-wrap:wrap;
+    justify-content:flex-start;
+    margin: 0;
+    padding: 0;
+}
+.row,.column1x1,.column2x2 {
+    position: relative;
+}
+.column1x1{
+    background: rgba(0,0,0,0.05);
+}
+.column1x1:hover{
+    background: rgba(0,0,0,0.1) !important;
+
+}
+/*=============================================================================================
+                                            Header
+=============================================================================================*/
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+}
+
+/***************************************************************
+                    Bar that contain Player State
+ **************************************************************/
+
+.topBar {
+    height: 35px;
+    padding: 0 15px ;
+    margin: 28px 4%;
+    z-index: 5;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, .6);
+    border: 2px solid rgb(74, 182, 239);
+    -webkit-box-shadow: inset 0 0 8px 3px rgba(74, 182, 239, .3);
+    box-shadow: 0 0 10px 3px rgba(74, 182, 239, .5), inset 0 0 10px 3px rgba(74, 182, 239, .3);
+}
+
+/*********************************************
+ * The Left Part Of The Top Bar
+ * ******************************************/
+#topBarLeft {
+    width: 40%;
+    display: flex;
+    justify-content: flex-start;
+}
+/*********************************************
+ * The Right Part Of The Top Bar
+ * ******************************************/
+#topBarRight {
+    width: 40%;
+    display: flex;
+    justify-content: flex-end;
+}
+/*********************************************
+ * The Logo that will be shown in the middle
+ * ******************************************/
+.topBarLogo {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index:    11;
+    text-align: center;
+}
+.topBarLogo img {
+    width: 130px;
+    height: 75px;
+    filter: drop-shadow(0px 0px 10px rgba(0, 0, 9, .5));
+}
+.logoSpace {
+    width: 200px;
+}
+/*********************************************
+ * The Component of the top bar
+ * ******************************************/
+.topBarPart {
+    margin: 1px .7%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+/*********************************************
+ * Progress bar that contain player stat
+ * ******************************************/
+.animated-progress {
+    height: 20px;
+    width: 80px;
+    border-radius: 5px;
+    margin: 5px 0;
+    border: 1px solid rgb(189, 113, 113);
+    overflow: hidden;
+    position: relative;
+}
+.animated-progress span {
+    height: 100%;
+    display: block;
+    color: rgb(255, 251, 251);
+    text-align: center;
+}
+
+/****************************************************
+ * The color and  the  width of the  progress bar
+ * *************************************************/
+.progress-fleet span {
+    width: 0;
+    background-color: #f907fc;
+    background-image: linear-gradient(315deg, #f907fc 0%, #05d6d9 74%);
+}
+.progress-crystal span {
+    width: 0;
+    background-color: #861657;
+    background-image: linear-gradient(326deg, #861657 0%, #ffa69e 74%);
+}
+.progress-construction span {
+    width: 0;
+    background-color: #1fd1f9;
+    background-image: linear-gradient(315deg, #1fd1f9 0%, #b621fe 74%);
+}
+.progress-uranium span {
+    width: 0;
+    background-color: #f5d020;
+    background-image: linear-gradient(315deg, #f5d020 0%, #f53803 74%);
+}
+.progress-steel span {
+    width: 0;
+    background-color: #b1bfd8;
+    background-image: linear-gradient(315deg, #b1bfd8 0%, #6782b4 74%);
+}
+.progress-energy span {
+    width: 0;
+    background-color: #2a2a72;
+    background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
+}
+.progress-population span {
+    width: 0;
+    background-color: #ee8c68;
+    background-image: linear-gradient(315deg, #ee8c68 0%, #eb6b9d 74%);
+}
+.progress-gold span {
+    width: 0;
+    background-color: #fbb034;
+    background-image: linear-gradient(315deg, #fbb034 0%, #ffdd00 74%);
+}
+
+/*****************************************
+ * Progress Bar value
+ * **************************************/
+.topBarPart p {
+    margin: 1px 5px;
+    color: white;
+    position: absolute;
+    top: 1px;
+    width: 100%;
+    text-align: center;
+}
+
+/*********************************************
+ * The icon of the component used in top bar
+ * ******************************************/
+.topBarIcon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 3px;
+}
+.topBarIcon img {
+    height: 25px;
+    width: 25px;
+}
+
+/*********************************************
+ * The Left and right section of  the header
+ * ******************************************/
+.left-section, .right-section{
+    width: 180px;
+    height: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, .6);
+    border: 2px solid rgb(74, 182, 239);
+    -webkit-box-shadow: inset 0 0 8px 3px rgba(74, 182, 239, .3);
+    box-shadow: 0 0 10px 3px rgba(74, 182, 239, .5), inset 0 0 10px 3px rgba(74, 182, 239, .3);
+}
+.right-section {
+    margin-top: 15px;
+    margin-right: 30px;
+}
+.left-section {
+    margin-top: 15px;
+    margin-left: 30px;
+}
+/**********************************************
+ * User Info Section in the header
+ * *******************************************/
+.user-info {
+    display:flex;
+    justify-content: space-evenly;
+    overflow: hidden;
+    padding: 0 2px;
+
+}
+.user-info img {
+    width: 20px;
+    height: 20px;
+}
+.user-info span {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+    font-weight: 900;
+    font-size: .8em;
+}
+
+/**********************************************
+ * Planet Info Section in the header
+ * *******************************************/
+.planet-info {
+    display:flex;
+    justify-content: center;
+    overflow: hidden;
+}
+.planet-info img {
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+}
+.planet-info span {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+    font-weight: 900;
+}
+
+
+
+
+
+/*=============================================================================================
+                                            Footer
+=============================================================================================*/
+footer {
+    position: fixed;
+    bottom:0;
+    right: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 4px solid rgb(74, 182, 239);
+    padding: 0 10px;
+}
+
+/**********************************************
+ * Chat box
+ * *******************************************/
+.chatbox {
+    padding-top: 10px;
+    width:420px;
+    height:180px;
+}
+
+.usermsg{
+    width:330px;
+    height:30px;
+    font-family: "supercell", serif;
+    background-color: white;
+    border-radius: 5px;
+    border: 0;
+    margin-bottom: 10px;
+
+}
+.default-btn {
+    font-size: 1em;
+    color: white;
+    border: 0;
+    border-radius: 8px;
+    background-color: #6e72fc;
+    background-image: linear-gradient(315deg, #6e72fc 0%, #ad1deb 74%);
+}
+.default-btn:hover{
+    background-color: rgb(74, 182, 239);
+    -webkit-box-shadow: inset 0 0 0 0 rgba(74, 182, 239, .3);
+    box-shadow: 0 0 0 0 rgba(74, 182, 239, .5), inset 0 0 10px 3px rgba(74, 182, 239, .3);
+    cursor:pointer;
+}
+.submitMessage{
+    height:30px;
+    padding: 0 10px;
+}
+#chatArea {
+    background-color: rgba(0, 0, 0, .2);
+    width:420px;
+    height:160px;
+    margin-bottom: 7px;
+    border-radius: 5px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    z-index: 10;
+}
+
+.chatArea .msg-in {
+    width: 95%;
+    height: 20px;
+    margin: 0 2.5%;
+    border-bottom: 1px solid rgba(255, 255, 255, .5);
+}
+.chatArea .msg-in p {
+    text-align: left;
+    padding-left: 5px;
+}
+.chatInput {
+    display: flex;
+    justify-content: space-between;
+}
+.zoom {
+    width: 420px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin: 30px ;
+}
+.zoom-btn {
+    width: 50px;
+    height: 50px;
+    color: white;
+    cursor: pointer;
+    font-size: 2em;
+    border-radius: 100px;
+    margin: 30px 10px;
+    background: rgba(0, 0, 0, .6);
+    border: 2px solid rgb(74, 182, 239);
+    -webkit-box-shadow: inset 0 0 8px 3px rgba(74, 182, 239, .3);
+    box-shadow: 0 0 10px 3px rgba(74, 182, 239, .5), inset 0 0 10px 3px rgba(74, 182, 239, .3);
+}
+.assets{
+    width: 30px;
+    height: 30px;
+}
+.logo{
+    height: 80px;
+}
+
+
+
+
+/**********************************************************
+*Construction Bar
+**********************************************************/
+#building-store {
+    position: relative;
+    bottom: -185px;
+    transition: 0.7s;
+}
+#building-construction-up-down {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.building-bar-title {
+    width: 250px;
+    height: 30px;
+    color: white;
+    font-size:1.1em;
+    text-align: center;
+    border-radius: 10px 10px 0 0;
+    background: rgba(0, 0, 0, .6);
+    border: 2px solid rgb(74, 182, 239);
+    border-bottom: 0 ;
+    -webkit-box-shadow: inset 0 0 8px 3px rgba(74, 182, 239, .3);
+    box-shadow: 0 0 10px 3px rgba(74, 182, 239, .5), inset 0 0 10px 3px rgba(74, 182, 239, .3);
+}
+#building-construction-up-down button {
+    background: rgba(0, 0, 0, 0);
+    border: 0;
+    color: white;
+    font-weight: bolder;
+    border-radius: 100px;
+    cursor: pointer;
+}
+.building-menu-up-down #title-bar-icon {
+    font-size: 1.2em;
+}
+#building-construction {
+    width: 1040px;
+    height: 180px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10px 10px 0 0;
+    background: rgba(0, 0, 0, .6);
+    border: 2px solid rgb(74, 182, 239);
+    border-bottom: 0 ;
+    -webkit-box-shadow: inset 0 0 8px 3px rgba(74, 182, 239, .3);
+    box-shadow: 0 0 10px 3px rgba(74, 182, 239, .5), inset 0 0 10px 3px rgba(74, 182, 239, .3);
+}
+.building-select {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+}
+.building-info {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    margin: 10px 0 0 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.building-image {
+    width: 100px;
+    height: 100px;
+}
+.building-construction-btn {
+    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.image-section {
+    padding: 5px 0;
+    text-align: center;
+}
+.building-title {
+    margin-bottom: 5px;
+    text-align: center;
+    color: white;
+}
+.buy-building {
+    height: 20px;
+    margin: 0 50px;
+    text-align: center;
+    width: 80px;
+    color: white;
+    border: 0;
+    border-radius: 5px;
+    background-color: #6e72fc;
+    background-image: linear-gradient(315deg, #6e72fc 0%, #ad1deb 74%);
+}
+
+.building-construction-btn button{
+    width: 30px;
+    height: 30px;
+    color: white;
+    border-radius: 100px;
+    background-color: #6e72fc;
+    background-image: linear-gradient(315deg, #6e72fc 0%, #ad1deb 74%);
+
+}
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background-color: #6e72fc;
+    background-image: linear-gradient(315deg, #6e72fc 0%, #ad1deb 74%);
+    border-radius: 10px;
+}
+
+
+
+
+
+
+
+
+
+/*********************************************************************************
+Left Menu
+****************************************************************************** */
+#center{
+    position: absolute;
+    display: inline-block;
+}
+#C{
+    position: absolute;
+    top: 1px;
+    left: 0px;
+    display: inline-block;
+}
+#wrap-menuG {
+    height: 100%;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#menuc, #menuv, #menua {
+    display: none;
+}
+#menug{
+    float: left;
+    width: 150px;
+}
+.sous-menu img {
+    width: 30px;
+    height: 30px;
+}
+.sous-menu {
+    overflow: hidden;
+    width: 45px;
+    height: 45px;
+    padding-top: 15px;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    margin: 15px 0;
+    justify-content: space-around;
+    background: rgba(0, 0, 0, .6);
+    border-radius: 0 100px 100px  0;
+    border: 2px solid rgb(74, 182, 239);
+    -webkit-box-shadow: inset 0 0 8px 3px rgba(74, 182, 239, .3);
+    box-shadow: 0 0 10px 3px rgba(74, 182, 239, .5), inset 0 0 10px 3px rgba(74, 182, 239, .3);
+    border-left: 0;
+    transition: 1s;
+    transition-timing-function: ease-in-out;
+}
+.sous-menu:hover {
+    width: 200px;
+}
+.sous-menu button {
+    background: rgba(0, 0, 0, 0);
+    border: 0;
+    cursor: pointer;
+    margin-left: 10px;
+    color: white;
+    font-size: 1.2em;
+    padding-bottom: 15px;
+    width: 0;
+    display: none;
+}
+.sous-menu:hover button {
+    display: inline-block;
+    width: 100px;
+}
+.menuS{
+    background: rgba(0, 0, 0, .6);
+    border-radius: 0 100px 100px  0;
+    border: 2px solid rgb(74, 182, 239);
+    -webkit-box-shadow: inset 0 0 8px 3px rgba(74, 182, 239, .3);
+    box-shadow: 0 0 10px 3px rgba(74, 182, 239, .5), inset 0 0 10px 3px rgba(74, 182, 239, .3);
+    position: relative;
+    position: fixed;
+    top: 1px;
+    z-index: 1;
+    margin: 130px 20%;
+    width: 59%;
+    height: 70%;
+    border-radius: 10px;
+    overflow-y: auto ;
+}
+
+#menu_const{
+    border: 1px solid white;
+    margin: 10px;
+    margin-left: 3em;
+    margin-right: 3em;
+    height: auto;
+    width: auto;
+}
+.sous_menu_const{
+    border: 1px solid white;
+    margin: 1em;
+    color: black;
+    padding: 30px 0;
+    display: flex;
+    justify-content: space-around;
+}
+#titre_const {
+    color: white;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1.4em;
+}
+.nom_vaisseau, .cout_vaisseau, .choix_vaisseau,.nombre_vaisseau{
+    color: white;
+}
+
+input[type=number]::-webkit-inner-spin-button {
+    background-color: rebeccapurple;
+}
+
+
+.wrap-menuV {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#menuv{
+    background: rgba(0, 0, 0, .6);
+    border-radius: 0 100px 100px  0;
+    border: 2px solid rgb(74, 182, 239);
+    -webkit-box-shadow: inset 0 0 8px 3px rgba(74, 182, 239, .3);
+    box-shadow: 0 0 10px 3px rgba(74, 182, 239, .5), inset 0 0 10px 3px rgba(74, 182, 239, .3);
+    position: fixed;
+    top: 0;
+    float: left;
+    top: 1px;
+    width: 70em;
+    height: 40em;
+    z-index: 10;
+    border-radius: 10px;
+}
+#vaisseau1 img{
+    width: 150px;
+    height: 150px;
+    border-radius: 100px;
+}
+
+
+#menua{
+
+}
+
+#menur{
+    background-color:#B6B3BC;
+    position: relative;
+    float: left;
+    top: 1px;
+    border: 5px solid black;
+    width: 70em;
+    height: 40em;
+    margin-top: 10em;
+    margin-left: 10em;
+    z-index: 1;
+    border-radius: 10% 1% 10% 10%;
+}
+
+.close{
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    width: 4em;
+    height: 4em;
+    background-color: black;
+    color: white;
+    border-radius: 50px;
+    font-size: 10px;
+}
+.vaisseau{
+    margin: 5em;
+    padding: 1em;
+    height: 33em;
+    display: inline-block;
+}
+img{
+    width: 10em;
+    height: 10em;
+}
+/*Right BAr*/
+.wrap-menuD {
+    height: 100%;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    right: -252px;
+    transition: 1s ease-in;
+}
+.subMenuD {
+    background: rgba(0, 0, 0, .6);
+    border-radius: 10px 0 0 10px;
+    border: 2px solid rgb(74, 182, 239);
+    -webkit-box-shadow: inset 0 0 8px 3px rgba(74, 182, 239, .3);
+    box-shadow: 0 0 10px 3px rgba(74, 182, 239, .5), inset 0 0 10px 3px rgba(74, 182, 239, .3);
+    width: 250px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border-right: 0;
+}
+#menud{
+    height: 500px;
+    padding-left: 10px;
+    z-index: 2;
+    float: right;
+    right: 0px;
+    position: absolute;
+    transition-property : width , height;
+    transition-duration : 1s;
+    display: flex;
+    justify-content: flex-start;
+}
+.menuDCloseOpenBtn {
+    width: 30px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+
+}
+.menuDCloseOpenBtn button {
+    height: 40px;
+    width: 30px;
+    color: white;
+    border: 2px solid rgb(74, 182, 239);
+    -webkit-box-shadow: inset 0 0 8px 3px rgba(74, 182, 239, .3);
+    box-shadow: 0 0 10px 3px rgba(74, 182, 239, .5), inset 0 0 10px 3px rgba(74, 182, 239, .3);
+    border-right: 0;
+    border-radius: 100px 0 0 100px;
+    background: rgba(0, 0, 0, .6);
+    cursor: pointer;
+}
+
+.possession-title{
+    font-size: 2em;
+    text-align: center;
+    margin: 10px 0 15px 0;
+    color: white;
+}
+
+.possessionButton{
+    background: rgba(0, 0, 0, 0);
+    border-radius: 5px;
+    margin: 10px 20px;
+    width: 200px;
+    font-size: 1.6em;
+    padding: 5px;
+    color: white;
+    cursor: pointer;
+}
+#LightTransportShip {
+    color: white;
+}
+
+#Planete{
+    font-size: 4em;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    left: -0.8em;
+    position: absolute;
+    width: 0.8em;
+    height: 4em;
+}
+#Planete:active{
+    color: red;
+    content: "<";
+}
+.planete{
+    border: 1px solid red;
+    height:10em;
+    width: 10em;
+    margin-top: 4em;
+    margin-left: 5em;
+    background: red;
+}
+#button_close{
+    display: none;
+}
+
+/*********************************************
+ * Adapt element to different screen size
+ * ******************************************/
+
+@media screen and ( min-width: 200px ) {
+    html {
+        zoom: 15%;
+    }
+}
+@media screen and ( min-width: 300px ) {
+    html {
+        zoom: 20%;
+    }
+}
+@media screen and ( min-width: 400px ) {
+    html {
+        zoom: 25%;
+    }
+}
+@media screen and ( min-width: 500px ) {
+    html {
+        zoom: 28%;
+    }
+}
+@media screen and ( min-width: 600px ) {
+    html {
+        zoom: 33.3%;
+    }
+}
+@media screen and ( min-width: 700px ) {
+    html {
+        zoom: 40.1%;
+    }
+}
+@media screen and ( min-width: 750px ) {
+    html {
+        zoom: 40.1%;
+    }
+}
+@media screen and ( min-width: 800px ) {
+    html {
+        zoom: 45%;
+    }
+}
+
+@media screen and ( min-width: 800px ) {
+    html {
+        zoom: 48.15%;
+    }
+}
+@media screen and ( min-width: 900px ) {
+    html {
+        zoom: 50.2%;
+    }
+}
+
+@media screen and ( min-width: 1000px ) {
+    html {
+        zoom: 57.2%;
+    }
+}
+
+@media screen and ( min-width: 1200px ) {
+    html {
+        zoom: 66.55%;
+    }
+}
+@media screen and ( min-width: 1350px ) {
+    html {
+        zoom: 79.55%;
+    }
+}
+@media screen and ( min-width: 1700px ) {
+    html {
+        zoom: 90.6%;
+    }
+}
+@media screen and ( min-width: 1800px ) {
+    html {
+        zoom: 100%;
+    }
+}
+@media screen and ( min-width: 2000px ) {
+    html {
+        zoom: 111%;
+    }
+}
+@media screen and ( min-width: 2200px ) {
+    html {
+        zoom: 124.5%;
+    }
+}
+@media screen and ( min-width: 2500px ) {
+    html {
+        zoom: 132.5%;
+    }
+}
+@media screen and ( min-width: 2800px ) {
+    html {
+        zoom: 148.9%;
+    }
+}
+@media screen and ( min-width: 2900px ) {
+    html {
+        zoom: 198.9%;
+    }
+}
+@media screen and ( min-width: 3900px ) {
+    html {
+        zoom: 296.9%;
+    }
+}
+@media screen and ( min-width: 5900px ) {
+    html {
+        zoom: 396.9%;
+    }
+}

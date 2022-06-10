@@ -1,0 +1,91 @@
+{
+    "type": "planet",
+    "id": 999,
+    "name": "Jupiter",
+    "skin": "PLANET_SKIN_1",
+    "size": {
+        "x": 25,
+        "y": 20
+    },
+    "resources": {
+        "Steel": 0,
+        "Crystal": 0,
+        "Uranium": 0,
+        "Gold": 0,
+        "Energy": 0,
+        "Population": {
+            "total": 0,
+            "used": 0
+        }
+    },
+    "storage": {
+        "Steel": 1000,
+        "Uranium": 500,
+        "Crystal": 100
+    },
+    "production": {
+        "Steel": 50,
+        "Uranium": 25,
+        "Crystal": 5
+    },
+    "spaceships": {
+        "Light Hunter": 24,
+        "Heavy Hunter": 91,
+        "Light Transport Ship": 93,
+        "Heavy transport Ship": 51,
+        "Destroyer": 81,
+        "Battle Cruiser": 99,
+        "Battle Ship": 4,
+        "Colonizer": 2
+    },
+    "baseTileMap": [
+        {
+            "x": 2,
+            "y": 7,
+            "building": "Defensive Turret",
+            "level": 1
+        },
+        {
+            "x": 10,
+            "y": 8,
+            "building": "Garage",
+            "level": 1
+        },
+        {
+            "x": 0,
+            "y": 4,
+            "building": "Habitation",
+            "level": 1
+        },
+        {
+            "x": 1,
+            "y": 5,
+            "building": "Mine",
+            "level": 1
+        },
+        {
+            "x": 2,
+            "y": 7,
+            "building": "Nuclear Plant",
+            "level": 1
+        },
+        {
+            "x": 2,
+            "y": 7,
+            "building": "Research Center",
+            "level": 1
+        },
+        {
+            "x": 0,
+            "y": 8,
+            "building": "Solar Panel",
+            "level": 1
+        },
+        {
+            "x": 4,
+            "y": 10,
+            "building": "Warehouse",
+            "level": 1
+        }
+    ]
+}

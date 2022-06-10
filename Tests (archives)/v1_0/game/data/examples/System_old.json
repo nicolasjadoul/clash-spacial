@@ -1,0 +1,202 @@
+{
+	"id": 82,
+	"position": [
+		{
+			"x": 2,
+			"y": 3
+		}
+	],
+	"taille": [
+		{
+			"x": 25,
+			"y": 25
+		}
+	],
+	"systemObject": [
+		{
+			"solar": [
+				{
+					"position": [
+						{
+							"x": 12,
+							"y": 13
+						}
+					],
+					"skin": "A"
+				}
+			]
+		},
+		{
+			"solar": [
+				{
+					"position": [
+						{
+							"x": 15,
+							"y": 12
+						}
+					],
+					"skin": "B"
+				}
+			]
+		},
+		{
+			"planet": [
+				{
+					"id": 543,
+					"name": "la capitale",
+					"type": "planet",
+					"joueur": "xXGameureZXx",
+					"skin": "A",
+					"position": [
+						{
+							"posGalaxy": [
+								{
+									"x": 21,
+									"y": 18
+								}
+							],
+							"posSystem": [
+								{
+									"x": 6,
+									"y": 5
+								}
+							]
+						}
+					],
+					"base": [
+						{
+							"id": 432,
+							"size": [
+								{
+									"x": 12,
+									"y": 12
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"planet": [
+				{
+					"id": 567,
+					"name": "",
+					"type": "planet",
+					"joueur": "",
+					"skin": "A",
+					"position": [
+						{
+							"posGalaxy": [
+								{
+									"x": 21,
+									"y": 18
+								}
+							],
+							"posSystem": [
+								{
+									"x": 19,
+									"y": 22
+								}
+							]
+						}
+					],
+					"base": [
+						{
+							"id": 432,
+							"size": [
+								{
+									"x": 13,
+									"y": 10
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"moon": [
+				{
+					"id": 543,
+					"name": "la big lune",
+					"type": "moon",
+					"joueur": "xXGameureZXx",
+					"skin": "C",
+					"position": [
+						{
+							"posGalaxy": [
+								{
+									"x": 21,
+									"y": 18
+								}
+							],
+							"posSystem": [
+								{
+									"x": 7,
+									"y": 8
+								}
+							]
+						}
+					],
+					"base": [
+						{
+							"id": 432,
+							"size": [
+								{
+									"x": 6,
+									"y": 6
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"flotte": [
+				{
+					"id": 3443,
+					"name": "Flotte Beta",
+					"speed": 8,
+					"position": [
+						{
+							"posGalaxy": [
+								{
+									"x": 21,
+									"y": 18
+								}
+							],
+							"posSystem": [
+								{
+									"x": 6,
+									"y": 5
+								}
+							]
+						}
+					],
+					"spaceship": [
+						{
+							"LightHunter": 0,
+							"HeavyHunter": 0,
+							"LightTransportShip": 12,
+							"HeavyTransportShip": 6,
+							"Destroyer": 10,
+							"BattleCruiser": 0,
+							"BattleShip": 2,
+							"Colonizer": 1
+						}
+					],
+					"ressources": [
+						{
+							"steel": 350000,
+							"crystal": 112500,
+							"uranium": 4523
+						}
+					]
+				}
+			]
+		}
+	]
+	
+}

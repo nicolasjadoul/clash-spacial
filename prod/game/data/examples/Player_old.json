@@ -1,0 +1,196 @@
+{
+  "active": true,
+  "alliance": [
+    {
+      "id": 2134,
+      "name": "Star-Patrol"
+    }
+  ],
+  "fleets": [
+    {
+      "id": 3423,
+      "name": "Flotte Alpha",
+      "speed": 5,
+      "position": [
+
+        {
+          "posGalaxy": [
+            {
+              "x": 21,
+              "y": 18
+            }
+          ],
+          "posSystem": [
+            {
+              "x": 11,
+              "y": 4
+            }
+          ]
+        }
+      ],
+      "spaceship": [
+        {
+          "LightHunter": 55,
+          "HeavyHunter": 23,
+          "LightTransportShip": 0,
+          "HeavyTransportShip": 2,
+          "Destroyer": 43,
+          "BattleCruiser": 12,
+          "BattleShip": 6,
+          "Colonizer": 0
+        }
+      ],
+      "ressources": [
+        {
+          "steel": 0,
+          "crystal": 0,
+          "uranium": 2748
+        }
+      ]
+    },
+    {
+      "id": 3443,
+      "name": "Flotte Beta",
+      "speed": 8,
+      "position": [
+        {
+          "posGalaxy": [
+            {
+              "x": 21,
+              "y": 18
+            }
+          ],
+          "posSystem": [
+            {
+              "x": 6,
+              "y": 5
+            }
+          ]
+        }
+      ],
+      "spaceship": [
+        {
+          "LightHunter": 0,
+          "HeavyHunter": 0,
+          "LightTransportShip": 12,
+          "HeavyTransportShip": 6,
+          "Destroyer": 10,
+          "BattleCruiser": 0,
+          "BattleShip": 2,
+          "Colonizer": 1
+        }
+      ],
+      "ressources": [
+        {
+          "steel": 350000,
+          "crystal": 112500,
+          "uranium": 4523
+        }
+      ]
+    }
+  ],
+  "gold": 3248953,
+  "id": 234,
+  "mail": "leplayerdu68@gmail.com",
+  "name": "xXPlayerXx",
+  "possession": [
+    {
+      "planet": {
+        "id": 543,
+        "name": "la capitale",
+        "skin": "A",
+        "position": [
+          {
+            "posGalaxy": [
+              {
+                "x": 21,
+                "y": 18
+              }
+            ],
+            "posSystem": [
+              {
+                "x": 6,
+                "y": 5
+              }
+            ]
+          }
+        ],
+        "base": [
+          {
+            "id": 432,
+            "size": [
+              {
+                "x": 12,
+                "y": 12
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "base": [
+          {
+            "id": 734,
+            "size": [
+              {
+                "x": 8,
+                "y": 8
+              }
+            ]
+          }
+        ],
+        "id": 521,
+        "name": "la base aux milles ressources",
+        "position": [
+          {
+            "posGalaxy": [
+              {
+                "x": 23,
+                "y": 17
+              }
+            ],
+            "posSystem": [
+              {
+                "x": 3,
+                "y": 5
+              }
+            ]
+          }
+        ],
+        "skin": "A"
+      },
+      "moon": {
+        "base": [
+          {
+            "id": 43432,
+            "size": [
+              {
+                "x": 7,
+                "y": 6
+              }
+            ]
+          }
+        ],
+        "id": 5231,
+        "name": "la lune de la capitale",
+        "position": [
+          {
+            "posGalaxy": [
+              {
+                "x": 21,
+                "y": 18
+              }
+            ],
+            "posSystem": [
+              {
+                "x": 8,
+                "y": 6
+              }
+            ]
+          }
+        ],
+        "skin": "A"
+      }
+    }
+  ]
+}

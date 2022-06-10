@@ -1,0 +1,43 @@
+@font-face{
+    font-family:"supercell";
+    src:url("Typos/supercell-magic-webfont.ttf") format("truetype");
+}
+html{
+    background-image: url("assets/background.jpeg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+}
+.main{
+    width: 100%;
+    align-content: center;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+}
+.map{
+    display: inline-block;
+    transform: rotateX(50deg) rotateY(20deg) rotateZ(34deg);
+    border: 3px solid rgba(0,0,0,0.1);
+}
+.row {
+    display: flex;
+    flex-wrap:wrap;
+    justify-content:flex-start;
+    margin: 0;
+    padding: 0;
+}
+.row,.column {
+    position: relative;
+}
+.column{
+    background: rgba(0,0,0,0.05);
+    height : 70px;
+    width : 44px;
+}
+.column:hover{
+    background: rgba(0,0,0,0.1);
+}
+

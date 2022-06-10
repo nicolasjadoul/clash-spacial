@@ -1,0 +1,108 @@
+{
+    "id": 999,
+    "name": "Solar System",
+    "position": {
+        "x": 10,
+        "y": 10
+    },
+    "size": {
+        "x": 25,
+        "y": 25
+    },
+    "composition": [
+        {
+            "type": "star",
+            "id": [
+                999
+            ],
+            "name": [
+                "Sun"
+            ],
+            "skin": "STAR_SKIN_1",
+            "position": {
+                "x": 50,
+                "y": 50
+            }
+        },
+        {
+            "type": "planet",
+            "id": 999,
+            "name": "Mars",
+            "skin": "PLANET_SKIN_1",
+            "positions": {
+                "posGalaxy": {
+                    "x": 5,
+                    "y": 5
+                },
+                "posSystem": {
+                    "x": 5,
+                    "y": 5
+                }
+            },
+            "base": {
+                "id": 1,
+                "size": {
+                    "x": 10,
+                    "y": 10
+                }
+            }
+        },
+        {
+            "type": "planet",
+            "id": 999,
+            "name": "Jupiter",
+            "skin": "PLANET_SKIN_1",
+            "positions": {
+                "posGalaxy": {
+                    "x": 2,
+                    "y": 2
+                },
+                "posSystem": {
+                    "x": 2,
+                    "y": 2
+                }
+            },
+            "base": {
+                "id": 0,
+                "size": {
+                    "x": 25,
+                    "y": 20
+                }
+            }
+        },
+        {
+            "id": 1,
+            "name": "Flotte",
+            "speed": 10,
+            "positions": {
+                "posGalaxy": {
+                    "x": 1,
+                    "y": 1
+                },
+                "posSystem": {
+                    "x": 1,
+                    "y": 1
+                }
+            },
+            "spaceships": {
+                "Light Hunter": 0,
+                "Heavy Hunter": 0,
+                "Light Transport Ship": 0,
+                "Heavy transport Ship": 0,
+                "Destroyer": 0,
+                "Battle Cruiser": 0,
+                "Battle Ship": 0,
+                "Colonizer": 2
+            },
+            "resources": {
+                "Steel": 0,
+                "Crystal": 0,
+                "Uranium": 0,
+                "Gold": 0,
+                "Energy": 0,
+                "Population": 0
+            },
+            "type": "fleet"
+        }
+    ]
+}

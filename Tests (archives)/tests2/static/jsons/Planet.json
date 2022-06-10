@@ -1,0 +1,219 @@
+{
+  "name": "la capitale",
+  "type": "planet",
+  "id": 432,
+  "size": {
+      "x": 12,
+      "y": 12
+    },
+  "ressources": {
+      "steal": 2345433,
+      "crystal": 343212,
+      "uranium": 12454,
+      "energy": -17,
+      "population":
+        {
+          "total": 6238,
+          "used": 5980
+        }
+    },
+  "depot": {
+      "steal": 4000000,
+      "crystal": 3000000,
+      "uranium": 15000
+    },
+  "production": {
+      "steal": 12000,
+      "crystal": 9000,
+      "uranium": 420
+    },
+  "spaceship": {
+      "LightHunter": 5,
+      "HeavyHunter": 0,
+      "LightTransportShip": 27,
+      "HeavyTransportShip": 21,
+      "Destroyer": 0,
+      "BattleCruiser": 0,
+      "BattleShip": 0,
+      "Colonizer": 0
+    },
+  "baseTileMap":[
+      {
+        "x": 0,
+        "y": 0,
+        "building": "habitation",
+        "lvl": 1
+      },
+      {
+        "x": 11,
+        "y": 11,
+        "building": "habitation",
+        "lvl": 1
+      },
+      {
+        "x": 0,
+        "y": 11,
+        "building": "habitation",
+        "lvl": 1
+      },
+      {
+        "x": 11,
+        "y": 0,
+        "building": "habitation",
+        "lvl": 1
+    },
+      {
+        "x": 3,
+        "y": 4,
+        "building": "habitation",
+        "lvl": 1
+      },
+      {
+        "x": 3,
+        "y": 5,
+        "building": "habitation",
+        "lvl": 1
+      },
+      {
+        "x": 3,
+        "y": 6,
+        "building": "habitation",
+        "lvl": 1
+      },
+      {
+        "x": 3,
+        "y": 7,
+        "building": "habitation",
+        "lvl": 1
+      },
+      {
+        "x": 3,
+        "y": 8,
+        "building": "habitation",
+        "lvl": 1
+      },
+      {
+        "x": 4,
+        "y": 4,
+        "building": "crystalMine",
+        "lvl": 1,
+        "etat": true
+      },
+      {
+        "x": 5,
+        "y": 4,
+        "building": "crystalMine",
+        "lvl": 1,
+        "etat": true
+      },
+      {
+        "x": 7,
+        "y": 4,
+        "building": "stealMine",
+        "lvl": 1,
+        "etat": true
+      },
+      {
+        "x": 10,
+        "y": 4,
+        "building": "stealDepot",
+        "lvl": 1
+      },
+      {
+        "x": 11,
+        "y": 4,
+        "building": "crystalDepot",
+        "lvl": 1
+      },
+      {
+        "x": 12,
+        "y": 4,
+        "building": "uraniumDepot",
+        "lvl": 1
+      },
+      {
+        "x": 8,
+        "y": 4,
+        "building": "stealMine",
+        "lvl": 1,
+        "etat": true
+      },
+      {
+        "x": 6,
+        "y": 6,
+        "building": "uranimMine",
+        "lvl": 1,
+        "etat": true
+      },
+      {
+        "x": 9,
+        "y": 9,
+        "building": "commandCenter",
+        "lvl": 1
+      },
+      {
+        "x": 8,
+        "y": 8,
+        "building": "defenseTurret",
+        "lvl": 1
+      },
+      {
+        "x": 8,
+        "y": 10,
+        "building": "defenseTurret",
+        "lvl": 1
+      },
+      {
+        "x": 10,
+        "y": 8,
+        "building": "defenseTurret",
+        "lvl": 1
+      },
+      {
+        "x": 10,
+        "y": 10,
+        "building": "defenseTurret",
+        "lvl": 1
+      },
+      {
+        "x": 11,
+        "y": 4,
+        "building": "researchCenter",
+        "lvl": 1,
+        "etat": true
+      },
+      {
+        "x": 11,
+        "y": 5,
+        "building": "garage",
+        "lvl": 1,
+        "etat": true
+      },
+      {
+        "x": 11,
+        "y": 6,
+        "building": "spaceShipYard",
+        "lvl": 1,
+        "etat": true
+      },
+      {
+        "x": 11,
+        "y": 8,
+        "building": "solarPanel",
+        "lvl": 1
+      },
+      {
+        "x": 11,
+        "y": 9,
+        "building": "nuclearPlant",
+        "lvl": 1,
+        "etat": true
+      },
+      {
+        "x": 11,
+        "y": 9,
+        "building": "solarPanel",
+        "lvl": 1
+      }
+    ]
+}
