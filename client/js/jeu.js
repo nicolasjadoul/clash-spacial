@@ -402,37 +402,16 @@ function scrollToBottomMsg () {
     chatArea.scrollTop = chatArea.scrollHeight;
 }
 
-function show_menuv(){
-    document.getElementById('menuv').style.display="block";
+function show_menu(id){
+    document.getElementById(id).style.display="block";
 }
 
-function show_menuc(){
-    document.getElementById('menuc').style.display="block";
+
+
+function close_menu(id){
+    document.getElementById(id).style.display="none";
 }
 
-function show_menua(){
-    document.getElementById('menua').style.display="block";
-}
-
-function show_menur(){
-    document.getElementById('menur').style.display="block";
-}
-
-function close_menuv(){
-    document.getElementById('menuv').style.display="none";
-}
-
-function close_menuc(){
-    document.getElementById('menuc').style.display="none";
-}
-
-function close_menua(){
-    document.getElementById('menua').style.display="none";
-}
-
-function close_menur(){
-    document.getElementById('menur').style.display="none";
-}
 
 
 function block_Colonizer(){
@@ -450,66 +429,8 @@ function block_Colonizer(){
     }
 }
 
-function block_LightTransportShip(){
-    let block;
-    const station_spacial = Boolean("false");
-    if(station_spacial){
-        block = Boolean("true");
-    }
-    else if(station_spacial===false){
-        block=false;
-    }
-    if(block){
-        document.getElementById('LightTransportShip').style.opacity="0.3";
-        //document.getElementById('choix6').style.display="none";
-    }
-}
-
-function block_HeavyTransportShip(){
-    let block;
-    const station_spacial = Boolean("false");
-    if(station_spacial){
-        block = Boolean("true");
-    }
-    else if(station_spacial===false){
-        block=false;
-    }
-    if(block){
-        document.getElementById('HeavyTransportShip').style.opacity="0.1";
-        //document.getElementById('choix1').style.display="none";
-    }
-}
-
-function block_Destroyer(){
-    let station_spacial = Boolean("false");
-    let block
-    if(station_spacial){
-        block = Boolean("true");
-    }
-    else if(station_spacial===false){
-        block=false;
-    }
-    if(block){
-        document.getElementById('Destroyer').style.opacity="0.1";
-        //document.getElementById('choix2').style.display="none";
-    }
-}
-
-function block_BattleCruiser(){
-    let block = Boolean("true");
-    if(block){
-        document.getElementById('BattleCruiser').style.opacity="0.1";
-        //document.getElementById('choix3').style.display="none";
-    }
-}
-
-function block_BattleShip(){
-    const block = Boolean("true");
-    if(block){
-        document.getElementById('BattleShip').style.opacity="1";
-        document.getElementById('BattleShip').style.color="black";
-        //document.getElementById('choix4').style.display="none";
-    }
+function block_spaceship(id){
+    document.getElementById(id).style.opacity="0.3";
 }
 
 function closeOpenMenuD() {

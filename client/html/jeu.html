@@ -2,6 +2,8 @@
 
 <html id="html" lang="en" class="dragscroll" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
 <head>
+    <link rel="stylesheet" href="../css/jeu.css" />
+    <script rel="text/javascript" src="../js/jeu.js" ></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="static/css/jeu.css">
@@ -149,23 +151,23 @@
 
                     <!------------------Construction Menu Button----------------->
                     <div class="sous-menu">
-                        <img src="static/assets/topBarIcon/space-colonyIcon.png" alt="space clony Icon" onclick="show_menuc();">
-                        <button id="construction" type="button" onclick="show_menuc();">
+                        <img src="static/assets/topBarIcon/space-colonyIcon.png" alt="space clony Icon" onclick="show_menu('menuc');">
+                        <button id="construction" type="button" onclick="show_menu('menuc');">
                             Construction
                         </button>
                     </div>
                     <!------------------Alliance Menu Button----------------->
                     <div class="sous-menu">
-                        <img src="static/assets/topBarIcon/alliance.png" alt="alliance icon" onclick="show_menua();">
-                        <button id="alliance" onclick="show_menua();" >
+                        <img src="static/assets/topBarIcon/alliance.png" alt="alliance icon" onclick="show_menu('menua');">
+                        <button id="alliance" onclick="show_menu('menua');" >
                             <span>Alliance</span>
                         </button>
                     </div>
 
                     <!------------------Fleet Menu Button----------------->
                     <div class="sous-menu">
-                        <img src="static/assets/topBarIcon/fleet.png" alt="fleet icon" onclick="show_menuv();">
-                        <button id="flotte" type="button" onclick="show_menuv();">
+                        <img src="static/assets/topBarIcon/fleet.png" alt="fleet icon" onclick="show_menu('menuv');">
+                        <button id="flotte" type="button" onclick="show_menu('menuv');">
                             Flotte
                         </button>
                     </div>
@@ -173,8 +175,8 @@
                     <!------------------Map Menu Button----------------->
                     <div class="sous-menu">
 
-                        <img src="../assets/topBarIcon/planet.png" alt="planet icon" onclick="show_menur();">
-                        <button id="carte" role="button" onclick="show_menur();">
+                        <img src="../assets/topBarIcon/planet.png" alt="planet icon" onclick="show_menu('menur');">
+                        <button id="carte" role="button" onclick="show_menu('menur');">
 
                             <span>Carte</span>
                         </button>
@@ -187,7 +189,7 @@
             Construction Menu PopUp
             <-------------------------------------------------------------------------->
             <div class="menuS" id="menuc">
-                <button class="close" type="button" onclick="close_menuc();">X</button>
+                <button id="essai" class="close" type="button" onclick="close_menu('menuc');">X</button>
 
                 <div id="titre_const"><p>Menu de construction</p></div>
 
@@ -212,7 +214,7 @@
 
                     </div>
 
-                    <div class="sous_menu_const" id="LightTransportShip">
+                    <div class="sous_menu_const" id="LightTransportShip" opacity="block_LightTransportShip(this.id);">
                         <p class="nom_vaisseau">LightTransportShip</p>
                         <p class="cout_vaisseau">cout : </p>
                         <p class="nombre_vaisseau">Nombre :</p>
@@ -220,7 +222,7 @@
                             <input class="choix_vaisseau" type="number">
                         </label>
                         <script>
-                            block_LightTransportShip();
+                            block_spaceship('LightTransportShip');
                         </script>
                     </div>
 
@@ -237,7 +239,7 @@
                         <p class="nombre_vaisseau">Nombre :</p>
                         <label><input class="choix_vaisseau" type="number" step="1"></label>
                         <script>
-                            block_Destroyer();
+                            block_spaceship('Destroyer');
                         </script>
                     </div>
 
@@ -247,7 +249,7 @@
                         <p class="nombre_vaisseau">Nombre :</p>
                         <label><input class="choix_vaisseau" type="number" step="1"></label>
                         <script>
-                            block_BattleCruiser();
+                            block_spaceship('BattleCruiser');
                         </script>
                     </div>
 
@@ -257,7 +259,7 @@
                         <p class="nombre_vaisseau">Nombre :</p>
                         <label><input class="choix_vaisseau" type="number" step="1"></label>
                         <script>
-                            block_BattleShip();
+                            block_spaceship('BattleShip');
                         </script>
                     </div>
                     <div class="sous_menu_const" id="Colonizer">
@@ -266,7 +268,7 @@
                         <p class="nombre_vaisseau">Nombre :</p>
                         <label><input class="choix_vaisseau" id="choix" type="number" step="1"></label>
                         <script>
-                            block_Colonizer();
+                            block_spaceship('Colonizer');
                         </script>
                     </div>
                 </div>
@@ -276,7 +278,7 @@
 
 
             <div id="menuv" class="menuS">
-                <button class="close" type="button" onclick="close_menuv();">
+                <button class="close" type="button" onclick="close_menu('menuv');">
                     X
                 </button>
 
@@ -296,7 +298,7 @@
             </div>
 
             <div id="menua" class="menuS">
-                <button class="close" type="button" onclick="close_menua();">X</button>
+                <button class="close" type="button" onclick="close_menu('menua');">X</button>
                 <div class="vaisseau">
                     <div id="vaisseau10"></div>
                     <div id="vaisseau11"></div>
@@ -311,7 +313,7 @@
             </div>
 
             <div id="menur" class="menuS">
-                <button class="close" type="button" onclick="close_menur();">
+                <button class="close" type="button" onclick="close_menu('menur');">
                     X
                 </button>
 
