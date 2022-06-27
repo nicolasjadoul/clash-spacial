@@ -151,23 +151,23 @@
 
                     <!------------------Construction Menu Button----------------->
                     <div class="sous-menu">
-                        <img src="static/assets/topBarIcon/space-colonyIcon.png" alt="space clony Icon" onclick="show_menu('menuc');">
-                        <button id="construction" type="button" onclick="show_menu('menuc');">
+                        <img src="static/assets/topBarIcon/space-colonyIcon.png" alt="space clony Icon" onclick="openLeftMenu('menuc');">
+                        <button id="construction" type="button" onclick="openLeftMenu('menuc');">
                             Construction
                         </button>
                     </div>
                     <!------------------Alliance Menu Button----------------->
                     <div class="sous-menu">
-                        <img src="static/assets/topBarIcon/alliance.png" alt="alliance icon" onclick="show_menu('menua');">
-                        <button id="alliance" onclick="show_menu('menua');" >
+                        <img src="static/assets/topBarIcon/alliance.png" alt="alliance icon" onclick="openLeftMenu('menua');">
+                        <button id="alliance" onclick="openLeftMenu('menua');" >
                             <span>Alliance</span>
                         </button>
                     </div>
 
                     <!------------------Fleet Menu Button----------------->
                     <div class="sous-menu">
-                        <img src="static/assets/topBarIcon/fleet.png" alt="fleet icon" onclick="show_menu('menuv');">
-                        <button id="flotte" type="button" onclick="show_menu('menuv');">
+                        <img src="static/assets/topBarIcon/fleet.png" alt="fleet icon" onclick="openLeftMenu('menuv');">
+                        <button id="flotte" type="button" onclick="openLeftMenu('menuv');">
                             Flotte
                         </button>
                     </div>
@@ -175,8 +175,8 @@
                     <!------------------Map Menu Button----------------->
                     <div class="sous-menu">
 
-                        <img src="../assets/topBarIcon/planet.png" alt="planet icon" onclick="show_menu('menur');">
-                        <button id="carte" role="button" onclick="show_menu('menur');">
+                        <img src="../assets/topBarIcon/planet.png" alt="planet icon" onclick="openLeftMenu('menur');">
+                        <button id="carte" role="button" onclick="openLeftMenu('menur');">
 
                             <span>Carte</span>
                         </button>
@@ -189,7 +189,7 @@
             Construction Menu PopUp
             <-------------------------------------------------------------------------->
             <div class="menuS" id="menuc">
-                <button id="essai" class="close" type="button" onclick="close_menu('menuc');">X</button>
+                <button id="essai" class="close" type="button" onclick="closeLeftMenu('menuc');">X</button>
 
                 <div id="titre_const"><p>Menu de construction</p></div>
 
@@ -278,7 +278,7 @@
 
 
             <div id="menuv" class="menuS">
-                <button class="close" type="button" onclick="close_menu('menuv');">
+                <button class="close" type="button" onclick="closeLeftMenu('menuv');">
                     X
                 </button>
 
@@ -298,7 +298,7 @@
             </div>
 
             <div id="menua" class="menuS">
-                <button class="close" type="button" onclick="close_menu('menua');">X</button>
+                <button class="close" type="button" onclick="closeLeftMenu('menua');">X</button>
                 <div class="vaisseau">
                     <div id="vaisseau10"></div>
                     <div id="vaisseau11"></div>
@@ -313,7 +313,7 @@
             </div>
 
             <div id="menur" class="menuS">
-                <button class="close" type="button" onclick="close_menu('menur');">
+                <button class="close" type="button" onclick="closeLeftMenu('menur');">
                     X
                 </button>
 
@@ -325,7 +325,7 @@
         <div class="wrap-menuD">
                 <div id="menud">
                     <div class="menuDCloseOpenBtn">
-                        <button id="closeOpenMenuD" onclick="closeOpenMenuD();"> < </button>
+                        <button id="closeOpenMenuD" onclick="closeOpenPossessionMenu();"> < </button>
                     </div>
                     <div class="subMenuD">
                         <div class="possession-title">Possessions</div>
