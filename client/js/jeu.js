@@ -387,6 +387,7 @@ function buildingListNext() {
 function constructionMenuUpDown() {
     if (!constructionMenuUp) openConstructionMenu();
     else closeConstructionMenu();
+    //aa
 }
 
 function openConstructionMenu() {
