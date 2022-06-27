@@ -373,6 +373,7 @@ function buildingListPrev() {
         }
     }
 }
+
 function buildingListNext() {
     let temp;
     if((document.getElementById("building-" + buildings.length).style.left).localeCompare("600px") !== 0) {
@@ -382,137 +383,43 @@ function buildingListNext() {
         }
     }
 }
+
 function constructionMenuUpDown() {
     if (!constructionMenuUp) openConstructionMenu();
     else closeConstructionMenu();
 }
+
 function openConstructionMenu() {
     constructionMenuUp = true;
     document.getElementById("building-store").style.transform = "translateY(-180px)";
     document.getElementById("title-bar-icon").innerHTML = '<p>&#709;</p>';
 
 }
+
 function closeConstructionMenu() {
     constructionMenuUp = false;
     document.getElementById("building-store").style.transform = "translateY(0)";
     document.getElementById("title-bar-icon").innerHTML = "<p>&#94;</p>";
 }
+
 function scrollToBottomMsg () {
     let chatArea = document.getElementById("chatArea");
     chatArea.scrollTop = chatArea.scrollHeight;
 }
 
-function show_menuv(){
-    document.getElementById('menuv').style.display="block";
+function openLeftMenu(id){
+    document.getElementById(id).style.display="block";
 }
 
-function show_menuc(){
-    document.getElementById('menuc').style.display="block";
+function closeLeftMenu(id){
+    document.getElementById(id).style.display="none";
 }
 
-function show_menua(){
-    document.getElementById('menua').style.display="block";
+function block_spaceship(id){
+    document.getElementById(id).style.opacity="0.3";
 }
 
-function show_menur(){
-    document.getElementById('menur').style.display="block";
-}
-
-function close_menuv(){
-    document.getElementById('menuv').style.display="none";
-}
-
-function close_menuc(){
-    document.getElementById('menuc').style.display="none";
-}
-
-function close_menua(){
-    document.getElementById('menua').style.display="none";
-}
-
-function close_menur(){
-    document.getElementById('menur').style.display="none";
-}
-
-
-function block_Colonizer(){
-    let block;
-    const station_spacial = Boolean("false");
-    if(station_spacial){
-        block = Boolean("true");
-    }
-    else if(station_spacial===false){
-        block=false;
-    }
-    if(block){
-        document.getElementById('Colonizer').style.opacity="0.1";
-        //document.getElementById('choix5').style.display="none";
-    }
-}
-
-function block_LightTransportShip(){
-    let block;
-    const station_spacial = Boolean("false");
-    if(station_spacial){
-        block = Boolean("true");
-    }
-    else if(station_spacial===false){
-        block=false;
-    }
-    if(block){
-        document.getElementById('LightTransportShip').style.opacity="0.3";
-        //document.getElementById('choix6').style.display="none";
-    }
-}
-
-function block_HeavyTransportShip(){
-    let block;
-    const station_spacial = Boolean("false");
-    if(station_spacial){
-        block = Boolean("true");
-    }
-    else if(station_spacial===false){
-        block=false;
-    }
-    if(block){
-        document.getElementById('HeavyTransportShip').style.opacity="0.1";
-        //document.getElementById('choix1').style.display="none";
-    }
-}
-
-function block_Destroyer(){
-    let station_spacial = Boolean("false");
-    let block
-    if(station_spacial){
-        block = Boolean("true");
-    }
-    else if(station_spacial===false){
-        block=false;
-    }
-    if(block){
-        document.getElementById('Destroyer').style.opacity="0.1";
-        //document.getElementById('choix2').style.display="none";
-    }
-}
-
-function block_BattleCruiser(){
-    let block = Boolean("true");
-    if(block){
-        document.getElementById('BattleCruiser').style.opacity="0.1";
-        //document.getElementById('choix3').style.display="none";
-    }
-}
-
-function block_BattleShip(){
-    const block = Boolean("true");
-    if(block){
-        document.getElementById('BattleShip').style.opacity="1";
-        document.getElementById('BattleShip').style.color="black";
-        //document.getElementById('choix4').style.display="none";
-    }
-}
-
-function closeOpenMenuD() {
+function closeOpenPossessionMenu() {
     if ((document.getElementsByClassName("wrap-menuD")[0].style.right).localeCompare("0px") !== 0) {
         document.getElementsByClassName("wrap-menuD")[0].style.right = "0";
         document.getElementById("closeOpenMenuD").innerText = ">";
@@ -521,7 +428,6 @@ function closeOpenMenuD() {
         document.getElementById("closeOpenMenuD").innerText = "<";
     }
 }
-
 
 (function (root, factory) {
     if (typeof define === 'function' && define.amd) {
